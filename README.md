@@ -7,6 +7,6 @@ Change check in position of QQ as a chustomized string
 1. 同目录下创建`header.txt`文本文件，将抓取的手机签到数据包的header放入，*不需要*将`Content-Length`字段加入
 2. windows用户在当前目录打开命令提示行输入`python biuflower.py`即可，linux用户添加执行权限后可以直接执行
 3. 在gc中填入群号，bkn填入抓取的bkn，poi为自定义地点字符串，点击biu花花执行
-4. 
+
 # 其他事项
 - bkn应该是和cookie对应的，只要cookie不过期bkn应该就不变，把bkn记录下来下次继续使用
