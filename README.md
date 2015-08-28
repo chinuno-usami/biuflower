@@ -9,6 +9,6 @@ Change check in position of QQ as a chustomized string
 3. 在gc中填入群号，bkn填入抓取的bkn，poi为自定义地点字符串，点击biu花花执行
 
 # 其他事项
-- 另外windows用户可以(直接下载)[https://github.com/chinuno-usami/biuflower/releases/]用py2exe打包的可执行文件使用，打开biuhuahua.exe即可
+- 另外windows用户可以[直接下载](https://github.com/chinuno-usami/biuflower/releases/)用py2exe打包的可执行文件使用，打开biuhuahua.exe即可
 - bkn应该是和cookie对应的，只要cookie不过期bkn应该就不变，把bkn记录下来下次继续使用
 - 方法由typcn提供 
