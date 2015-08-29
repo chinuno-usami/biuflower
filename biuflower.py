@@ -11,6 +11,8 @@ def post(req,data):
     opener = urllib2.build_opener(urllib2.HTTPCookieProcessor())  
     response = opener.open(req, data) 
     # print response.read().decode('utf-8') 
+    global respInfo
+    respInfo = response.info()
     return response.read()
 
 def biu():
@@ -53,9 +55,10 @@ def biu():
     # content = post(req,post_data)
     content = post(req,string)
     #decompress as gzip
-    ctt = zlib.decompress(content, 16+zlib.MAX_WBITS).decode("utf-8").encode("gbk")
-    print ctt
-    tkMessageBox.showinfo("biu花花", "花花已被一发入魂")
+    if( ("Content-Encoding" in respInfo) and (respInfo['Content-Encoding'] == "gzip")) :
+        content = "gzip!\n"+zlib.decompress(content, 16+zlib.MAX_WBITS)
+    print content.decode("utf-8").encode("gbk")
+    tkMessageBox.showinfo("biu", "快去看看成功了没！")
 
 # begin of GUI part
 root = Tk()
@@ -81,7 +84,7 @@ e2 = Entry(frm_R, textvariable = poi_ipt).pack(side=TOP)
 frm_R.pack(side=RIGHT)
 #Mid
 frm_B = Frame(root)
-Button(frm_B, text="开始biu花花", command=biu, width=10, height=1, font=('Arial', 10)).pack(side=TOP)
+Button(frm_B, text="biu", command=biu, width=10, height=1, font=('Arial', 10)).pack(side=TOP)
 frm_B.pack(side=TOP)
 
 
