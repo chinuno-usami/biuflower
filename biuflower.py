@@ -59,6 +59,10 @@ def biu():
     '''start biu
     '''
     if os.path.exists('biuflower.json'):
+        with open("biuflower.json","r") as cfg:
+            cfg_json = json.loads(cfg.read())
+            cookie_dic["cookie"] = cfg_json["cookie"]
+            cookie_dic['bkn'] = cfg_json['bkn']
         gc = gc_ipt.get()
         bkn = cookie_dic["bkn"]
         cookie = cookie_dic["cookie"]
