@@ -1,6 +1,6 @@
 # biuflower
 Change check in position of QQ as a chustomized string  
-用Python写的自定义QQ签到地点程序
+用Python写的自定义QQ签到地点程序  
 单个py文件
 # python版本2.x
 # 使用方法
@@ -10,6 +10,5 @@ Change check in position of QQ as a chustomized string
 
 # 其他事项
 - 另外windows用户可以[直接下载](https://github.com/chinuno-usami/biuflower/releases/)用py2exe打包的可执行文件使用，打开biuhuahua.exe即可
-- 若终端输出`no login`字样则表示过期啦，重新抓包吧
 - bkn应该是和cookie对应的，只要cookie不过期bkn应该就不变，把bkn记录下来下次继续使用
 - 方法由typcn提供 

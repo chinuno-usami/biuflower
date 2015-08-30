@@ -5,6 +5,7 @@ import tkMessageBox
 import urllib2
 import urllib
 import zlib
+import json
 def post(req,data):  
     '''Send post resquest
     '''
@@ -56,9 +57,16 @@ def biu():
     content = post(req,string)
     #decompress as gzip
     if( ("Content-Encoding" in respInfo) and (respInfo['Content-Encoding'] == "gzip")) :
-        content = "gzip!\n"+zlib.decompress(content, 16+zlib.MAX_WBITS)
+        content = zlib.decompress(content, 16+zlib.MAX_WBITS)
     print content.decode("utf-8").encode("gbk")
-    tkMessageBox.showinfo("biu", "快去看看成功了没！")
+
+    content_dic = json.loads(content)
+    if content_dic["ec"] == 0:
+        tkMessageBox.showinfo("biu", "快去看看成功了没！")
+    elif content_dic["ec"] == 1:
+        tkMessageBox.showinfo("biu", "cookie过期了。重新抓包吧")
+    else:
+        tkMessageBox.showinfo("biu", "出错啦。检查看看有没有什么地方填错了")
 
 # begin of GUI part
 root = Tk()
