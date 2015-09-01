@@ -1,3 +1,5 @@
+# 暂停更新  
+tx更改了参数添加了seckey，不知道计算规则的情况下无法更新
 # biuflower
 Change check in position of QQ as a chustomized string  
 用Python写的自定义QQ签到地点程序  
